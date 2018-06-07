@@ -1,0 +1,35 @@
+-----------------------------------------------
+
+
+
+                    Potato
+[Bild hintergrund][blurry video]
+-----------------------------------------------
+Abos
+-----------------------------------------------
+Herstellung | Verarbeitung | Lieferungen
+
+[grosse bilder hintergrund [Gewächshaus, Fabrik, Container etc.]]
+
+-----------------------------------------------
+Endprodukte
+[Chips, Fries, potato salad, potato gratin, potato soup] --> navi text
+--------------------------------------------------------
+            |
+            |
+            |
+            |
+Bild        |       Text Herstellung/Rezepte/Film
+            |
+            |
+            |
+            |
+-----------------------------------------------
+Bewertungen
+
+<Slider [Personen aus Klasse]>
+
+-----------------------------------------------
+[Footer]
+Copyright © 2018 Potato Group
+All rights reserved
