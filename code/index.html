@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
+        body{
+            margin:0px;
+            font-family: 'Courier New', Courier, monospace
+        }
         .element{
             min-height: 300px;
         }
@@ -22,15 +26,47 @@
         }
         #landing{
             background: grey;
+            color: white;
         }
         #information{
             background: green;
         }
-        h1{
-            color:white;
+        #navigation_logo{
+            float: left;
+            height: 50px;
         }
-        p{
-            color:white
+        #navigation_logo img{
+            height:auto;
+        }
+        #navigation_links{
+            float:right;
+            margin-right: 20px;
+        }
+        #navigation_links a{
+            text-decoration:  none;
+            margin-left: 20px;
+            color:white;
+            padding:5px;
+        }
+        #navigation_logo{
+            float:left;
+            margin-left: 20px;
+        }
+        #navigation_logo img{
+            height: 50px;
+            float: left;
+        }
+        #navigation_logo h2{
+            float: left;
+            padding-left: 20px;
+            margin:0px;
+        }
+        #navigation{
+            padding-top: 20px;
+        }
+        #buy{
+            border: 1px solid white;
+            border-radius: 12px;
         }
     </style>
     <script src="main.js"></script>
@@ -38,7 +74,16 @@
 <body>
     <div class="element" id="landing">
         <div id="navigation">
-
+            <div id="navigation_logo">
+                <img src="content/pictures/clipart-potato.png" alt="clipart-potato">
+                <h2>Potato</h2>
+            </div>
+            <div id="navigation_links">
+                <a href="#about">About</a>    
+                <a href="#features">Features</a>         
+                <a href="#nuritrition">Nuritrition</a>  
+                <a id="buy" href="#buy">Buy it now</a>  
+            </div>            
         </div>
         <div id="landing_content">
             <h1>"Sweet, Nuritrtious and Delicious"</h1>
