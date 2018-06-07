@@ -15,6 +15,8 @@ Herstellung | Verarbeitung | Lieferungen
 Endprodukte
 [Chips, Fries, potato salad, potato gratin, potato soup] --> navi text
 --------------------------------------------------------
+chips eating animation
+--------------------------------------------------------
             |
             |
             |
