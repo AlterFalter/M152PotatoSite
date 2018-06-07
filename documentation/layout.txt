@@ -10,10 +10,6 @@ Abos
 Herstellung | Verarbeitung | Lieferungen
 
 [grosse bilder hintergrund [Gewächshaus, Fabrik, Container etc.]]
-
------------------------------------------------
-Endprodukte
-[Chips, Fries, potato salad, potato gratin, potato soup] --> navi text
 --------------------------------------------------------
 chips eating animation
 --------------------------------------------------------
@@ -26,6 +22,7 @@ Bild        |       Text Herstellung/Rezepte/Film
             |
             |
             |
+[Chips, Fries, potato salad, potato gratin, potato soup]
 -----------------------------------------------
 Bewertungen
 
