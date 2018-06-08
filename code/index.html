@@ -8,12 +8,103 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body{
+            margin:0px;
+            font-family: 'Courier New', Courier, monospace
+        }
+        .element{
+            min-height: 300px;
+        }
+        #landing_content{
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        #landing_content picture img{
+            width: 300px !important;
+        }
+        #landing{
+            background: grey;
+            color: white;
+        }
+        #information{
+            background: green;
+        }
+        #navigation_logo{
+            float: left;
+            height: 50px;
+        }
+        #navigation_logo img{
+            height:auto;
+        }
+        #navigation_links{
+            float:right;
+            margin-right: 20px;
+        }
+        #navigation_links a{
+            text-decoration:  none;
+            margin-left: 20px;
+            color:white;
+            padding:5px;
+        }
+        #navigation_logo{
+            float:left;
+            margin-left: 20px;
+        }
+        #navigation_logo img{
+            height: 50px;
+            float: left;
+        }
+        #navigation_logo h2{
+            float: left;
+            padding-left: 20px;
+            margin:0px;
+        }
+        #navigation{
+            padding-top: 20px;
+        }
+        #buy{
+            border: 1px solid white;
+            border-radius: 12px;
+        }
+    </style>
     <script src="main.js"></script>
 </head>
 <body>
     <header>
 
     </header>
+    
+    <div class="element" id="landing">
+        <div id="navigation">
+            <div id="navigation_logo">
+                <img src="content/pictures/clipart-potato.png" alt="clipart-potato">
+                <h2>Potato</h2>
+            </div>
+            <div id="navigation_links">
+                <a href="#about">About</a>    
+                <a href="#features">Features</a>         
+                <a href="#nuritrition">Nuritrition</a>  
+                <a id="buy" href="#buy">Buy it now</a>  
+            </div>            
+        </div>
+        <div id="landing_content">
+            <h1>"Sweet, Nuritrtious and Delicious"</h1>
+            <p>By Yannis and Luca</p>
+            <picture >
+                <!-- ToDo: add more pictures -->
+                <source media="" srcset="content/pictures/landing-potato.png">
+                <img src="content/pictures/landing-potato.png" alt="Potatoes" style="width:auto;">
+            </picture>
+        </div>
+    </div>
+    <div class="element" id="information">
+        <div id="information_content">
+            <h1>PENIS</h1>
+        </div>
+    </div>
+
     <div id="Subscriptions">
         <h2>Subscriptions</h2>
         <div>
@@ -116,7 +207,7 @@
 
     <div>
         <h2>Reviews</h2>
-        <button onclick="previousReview"><</button>
+        <button onclick="previousReview"></button>
         <div class="review">
             <div class="reviewerName">Romäään</div>
             <div class="quote">The real name for a potato is Gummel! You should eat Gümmel with a Steak.</div>
