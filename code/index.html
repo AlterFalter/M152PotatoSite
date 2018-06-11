@@ -11,10 +11,12 @@
     <style>
         body{
             margin:0px;
-            font-family: 'Courier New', Courier, monospace
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         .element{
             min-height: 300px;
+            width:100%;
+            clear:both;
         }
         #landing_content{
             text-align: center;
@@ -22,14 +24,11 @@
             padding-bottom: 20px;
         }
         #landing_content picture img{
-            width: 300px !important;
+            width: 350px !important;
         }
         #landing{
-            background: grey;
+            background: #C1AF7D;
             color: white;
-        }
-        #information{
-            background: green;
         }
         #navigation_logo{
             float: left;
@@ -43,17 +42,17 @@
             margin-right: 20px;
         }
         #navigation_links a{
-            text-decoration:  none;
+            text-decoration: none;
             margin-left: 20px;
             color:white;
             padding:5px;
         }
         #navigation_logo{
-            float:left;
+            float: left;
             margin-left: 20px;
         }
         #navigation_logo img{
-            height: 50px;
+            height: 30px;
             float: left;
         }
         #navigation_logo h2{
@@ -63,10 +62,23 @@
         }
         #navigation{
             padding-top: 20px;
+            float: left;
+            width: 100%;
         }
         #buy{
             border: 1px solid white;
             border-radius: 12px;
+        }
+        #buy:hover{
+            border:1px solid #C1AF7D;
+            color: #C1AF7D;
+            background-color: white;
+        }
+        #subscriptions{
+            background-color: #D9E0DD;
+            text-align: center;
+            float: left;
+            color: #686666;
         }
     </style>
     <script src="main.js"></script>
@@ -90,8 +102,8 @@
             </div>            
         </div>
         <div id="landing_content">
-            <h1>"Sweet, Nuritrtious and Delicious"</h1>
-            <p>By Yannis and Luca</p>
+            <h1>"Sweet, Nuritritious and Delicious"</h1>
+            <p style="size:20px">By Yannis and <b>Luca</p>
             <picture >
                 <!-- ToDo: add more pictures -->
                 <source media="" srcset="content/pictures/landing-potato.png">
@@ -99,11 +111,53 @@
             </picture>
         </div>
     </div>
-    <div class="element" id="information">
-        <div id="information_content">
-            <h1>PENIS</h1>
+    <div class="element" id="subscriptions">
+        <div id="subscriptions_content">
+            <h1 id="subscriptions_title">Order one (or more) today!</h1>
+            <p class="subscription_name"><b>Potato</b> Lite</p>
+            <div style="align-content:center">
+                <ul>
+                    <li>Small and Compact</li>
+                    <li>Hghly portable</li>
+                    <li>Unapologetically delicous</li>
+                </ul>
+            </div>
+            
+
+            <a class="order">ORDER</a>
+            <p class="order_price">starting at $9.99</p>
         </div>
     </div>
+<style>
+    #subscriptions_content{
+        text-align: left;
+    }
+    #subscriptions_title{
+        text-align: center;
+    }
+    .order{
+        text-decoration: none;
+        margin-left: 20px;
+        color: #8CC084;
+        padding:5px;
+        text-align: center;
+        border: 1px solid #8CC084;
+        border-radius: 12px;
+        margin-top: 50px;
+        display: block;
+        width:100px;
+    }
+    .order:hover{
+        color: #D9E0DD;
+        background-color: #8CC084;
+    }
+    .subscription_name{
+        size:30px;
+    }
+</style>
+
+
+
 
     <div id="Subscriptions">
         <h2>Subscriptions</h2>
