@@ -20,15 +20,17 @@
         }
         #landing_content{
             text-align: center;
-            padding-top: 20px;
+            padding-top: 100px;
             padding-bottom: 20px;
         }
         #landing_content picture img{
             width: 350px !important;
+            margin-top: 50px;
         }
         #landing{
-            background: #C1AF7D;
+            background:radial-gradient(ellipse at center, #D1C7B1 0%, #BCAD8D 40%, #C1AF7D 100%);
             color: white;
+            height:700px;
         }
         #navigation_logo{
             float: left;
@@ -97,7 +99,7 @@
             <div id="navigation_links">
                 <a href="#about">About</a>    
                 <a href="#features">Features</a>         
-                <a href="#nuritrition">Nuritrition</a>  
+                <a href="#nuritrition">Nutrition</a>  
                 <a id="buy" href="#buy">Buy it now</a>  
             </div>            
         </div>
@@ -114,23 +116,27 @@
     <div class="element" id="subscriptions">
         <div id="subscriptions_content">
             <h1 id="subscriptions_title">Order one (or more) today!</h1>
-            <p class="subscription_name"><b>Potato</b> Lite</p>
-            <div style="align-content:center">
+            <div class="subscription_item">
+                <p class="subscription_name"><b>Potato</b> Lite</p>
                 <ul>
                     <li>Small and Compact</li>
                     <li>Hghly portable</li>
                     <li>Unapologetically delicous</li>
                 </ul>
+                <div style="text-align: center">
+                    <a class="order">ORDER</a>
+                </div>
+                <p class="order_price">starting at $9.99</p>
             </div>
-            
-
-            <a class="order">ORDER</a>
-            <p class="order_price">starting at $9.99</p>
         </div>
     </div>
 <style>
     #subscriptions_content{
         text-align: left;
+    }
+    .subscription_item{
+        width:200px;
+        float:right;
     }
     #subscriptions_title{
         text-align: center;
@@ -144,15 +150,20 @@
         border: 1px solid #8CC084;
         border-radius: 12px;
         margin-top: 50px;
-        display: block;
+        display: inline-block;
         width:100px;
     }
     .order:hover{
         color: #D9E0DD;
         background-color: #8CC084;
     }
+    .order_price{
+        text-align: center;
+        font-size:11px;
+    }
     .subscription_name{
-        size:30px;
+        font-size:25px;
+        text-align: center;
     }
 </style>
 
