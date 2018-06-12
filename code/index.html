@@ -159,6 +159,24 @@
             </div>
         </div>
     </div>
+    <div class="element" id="landing">
+        <div id="landing_content">
+            <h1>Let's eat some Chips</h1>
+            <div id="chipsEater">
+                <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#chips").on('click', () => {
+            let source = $("#chips").attr('src');
+            let stage = source.match(/\d/)[0] - 1;
+            if(stage >= 0){
+                $("#chips").attr('src', source.replace(/\d/, stage));
+            }
+        });
+    </script>
 <style>
     #subscriptions_content{
         text-align: left;
@@ -205,6 +223,9 @@
         text-align: center;
         padding-bottom:40px;
     }
+    .video_overlay{
+        display: inline-block;
+    }
 </style>
 
     <div id="">
@@ -224,20 +245,9 @@
         </div>
     </div>
 
-    <div id="chipsEater">
-        <h2>Enjoy your meal</h2>
-        <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
-    </div>
+    
 
-    <script>
-        $("#chips").on('click', () => {
-            let source = $("#chips").attr('src');
-            let stage = source.match(/\d/)[0] - 1;
-            if(stage >= 0){
-                $("#chips").attr('src', source.replace(/\d/, stage));
-            }
-        });
-    </script>
+    
 
     <div>
         <h2>Recipes</h2>
@@ -290,10 +300,8 @@
             </div>
             <script>
             $(".video_overlay").on('click', (e) => {
-                console.log('enter');
                 let overlay = $(e.target).closest('.video_overlay');
                 let video = overlay.find('video').get(0);
-                console.log('test', overlay, video);
                 if(video.paused){
                     video.play();
                     overlay.find('.video_button').hide();
@@ -302,7 +310,7 @@
                     video.pause();
                     overlay.find('.video_button').show();
                 }
-            })
+            });
             </script>
             <div>
                 <h3>potato gratin</h3>
