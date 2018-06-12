@@ -11,7 +11,7 @@
     <style>
         body{
             margin:0px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            font-family: 'Times New Roman', Times, serif
         }
         .element{
             min-height: 300px;
@@ -117,18 +117,33 @@
     <div class="element" id="subscriptions">
         <div id="subscriptions_content">
             <h1 id="subscriptions_title">Order one (or more) today!</h1>
-            <div class="subscription_item">
-                <p class="subscription_name"><b>Potato</b> Lite</p>
-                <ul>
-                    <li>Small and Compact</li>
-                    <li>Hghly portable</li>
-                    <li>Unapologetically delicous</li>
-                </ul>
-                <div style="text-align: center">
-                    <a class="order">ORDER</a>
+            <div id="subscription_items">
+                <div class="subscription_item" style="border-right: 1px solid #686666">
+                    <p class="subscription_name"><b>Potato</b> Lite</p>
+                    <ul style="text-align:left">
+                        <li>Small and Compact</li>
+                        <li>Highly portable</li>
+                        <li>Unapologetically delicous</li>
+                    </ul>
+                    <div>
+                        <a class="order">ORDER</a>
+                    </div>
+                    <p class="order_price">starting at $9.99</p>
                 </div>
-                <p class="order_price">starting at $9.99</p>
-            </div>
+                <div class="subscription_item">
+                    <p class="subscription_name"><b>Potato</b> Lite</p>
+                    <ul>
+                        <li>Small and Compact</li>
+                        <li>Highly portable</li>
+                        <li>Unapologetically delicous</li>
+                    </ul>
+                    <div>
+                        <a class="order">ORDER</a>
+                    </div>
+                    <p class="order_price">starting at $9.99</p>
+                </div>
+                <div style="clear:both"></div>
+            </div>            
         </div>
     </div>
 <style>
@@ -137,8 +152,16 @@
         height: 600px;
     }
     .subscription_item{
-        width:200px;
-        float:right;
+        width:250px;
+        display: inline-block;
+    }
+    #subscription_items{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .subscription_item li{
+        margin-top: 5px;
+        text-align: left;
     }
     #subscriptions_title{
         text-align: center;
@@ -167,6 +190,7 @@
     .subscription_name{
         font-size:25px;
         text-align: center;
+        padding-bottom:40px;
     }
 </style>
 
