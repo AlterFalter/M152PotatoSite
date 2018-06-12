@@ -294,22 +294,46 @@
         </div>
     </div>
 
-    <div>
+    <div id="reviews">
         <h2>Reviews</h2>
-        <button onclick="previousReview"></button>
-        <div class="review">
-            <div class="reviewerName">Romäään</div>
-            <div class="quote">The real name for a potato is Gummel! You should eat Gümmel with a Steak.</div>
-        </div>
-        <div class="review">
-            <div class="reviewerName">Jonas Portman</div>
-            <div class="quote">folien kartoffen sind die besten </div>
-        </div>
-        <div class="review">
-            <div class="reviewerName">Marco Despeaux</div>
-            <div class="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
-        </div>
+        <div>What our customers say:</div>
+        <div id="reviewerName">Marco Despeaux</div>
+        <div id="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
+        <button onclick="showPrevReview()">Previous</button>
+        <button onclick="showNextReview()">Next</button>
     </div>
+
+    <script>
+        var reviewIndex = 0;
+        var reviews = [
+            ["Roman Schilter", "The real name for a potato is Gummel! You should eat Gümmel with a Steak." ],
+            ["Jonas Portman", "Baked potatoes are the best!" ],
+            ["Marco Despeaux", "Potatoes are like unicorns. Awesome and farting rainbows." ],
+        ];
+        function showPrevReview()
+        {
+            reviewIndex--;
+            if (reviewIndex == -1)
+            {
+                reviewIndex = reviews.length - 1;
+            }
+            updateReview();
+        }
+        function showNextReview()
+        {
+            reviewIndex++;
+            if (reviewIndex == reviews.length)
+            {
+                reviewIndex = 0;
+            }
+            updateReview();
+        }
+        function updateReview()
+        {
+            $("#reviewerName").text(reviews[reviewIndex][0]);
+            $("#quote").text(reviews[reviewIndex][1]);
+        }
+    </script>
 
     <footer>
         <div>Copyright © 2018 Potato Group</div>
