@@ -256,8 +256,9 @@
         $("#chips").on('click', () => {
             let source = $("#chips").attr('src');
             let stage = source.match(/\d/)[0] - 1;
-            if(stage >= 0)
+            if(stage >= 0){
                 $("#chips").attr('src', source.replace(/\d/, stage));
+            }
         });
     </script>
 
@@ -285,7 +286,12 @@
                 </div>
                 <img src="" alt="cooked potato">
                 <div>
-                    <video src="content/videos/CookingPotatoes.mp4" controls></video>
+                    <div class="video_overlay" style="position: relative">
+                        <video src="content/videos/CookingPotatoes.mp4" controls></video>
+                        <div class="video_button" style="position: absolute; top:40%; color:white; left: 40%;">
+                            <img src="content/pictures/playbutton.png" alt="Playbutton">
+                        </div>
+                    </div>
                     <div>Music from <a href="https://www.bensound.com">Bensound</a></div>
                 </div>
             </div>
@@ -296,10 +302,31 @@
                 </div>
                 <img src="" alt="potato salad">
                 <div>
-                    <video src="content/videos/PotatoSalad.mp4" controls></video>
+                    <div class="video_overlay" style="position: relative">
+                        <video id="salad_video" src="content/videos/PotatoSalad.mp4" controls></video>
+                        <div class="video_button" style="position: absolute; top:40%; color:white; left: 40%;">
+                            <img src="content/pictures/playbutton.png" alt="Playbutton">
+                        </div>
+                    </div>
                     <div>Music from <a href="https://www.bensound.com">Bensound</a></div>
                 </div>
             </div>
+            <script>
+            $(".video_overlay").on('click', (e) => {
+                console.log('enter');
+                let overlay = $(e.target).closest('.video_overlay');
+                let video = overlay.find('video').get(0);
+                console.log('test', overlay, video);
+                if(video.paused){
+                    video.play();
+                    overlay.find('.video_button').hide();
+                }
+                else{
+                    video.pause();
+                    overlay.find('.video_button').show();
+                }
+            })
+            </script>
             <div>
                 <h3>potato gratin</h3>
                 <div class="text">
