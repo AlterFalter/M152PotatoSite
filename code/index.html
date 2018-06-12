@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     <style>
         body{
             margin:0px;
@@ -248,18 +249,17 @@
 
     <div id="chipsEater">
         <h2>Enjoy your meal</h2>
-        <img id="eater9" src="content/pictures/chips/Chips9.JPG" alt="all chips" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips8.JPG" alt="one chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips7.JPG" alt="two chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips6.JPG" alt="three chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips5.JPG" alt="four chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips4.JPG" alt="five chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips3.JPG" alt="six chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips2.JPG" alt="seven chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips1.JPG" alt="eight chips eaten" class="chips">
-        <img id="eater9" src="content/pictures/chips/Chips0.JPG" alt="nine chips eaten" class="chips">
-        <button onclick="eatChips();"></button>
+        <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
     </div>
+
+    <script>
+        $("#chips").on('click', () => {
+            let source = $("#chips").attr('src');
+            let stage = source.match(/\d/)[0] - 1;
+            if(stage >= 0)
+                $("#chips").attr('src', source.replace(/\d/, stage));
+        });
+    </script>
 
     <div>
         <h2>Recipes</h2>
