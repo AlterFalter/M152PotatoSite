@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/main.js"></script>
     <style>
         body{
             margin:0px;
@@ -85,7 +86,6 @@
             color: #686666;
         }
     </style>
-    <script src="main.js"></script>
 </head>
 <body>
     <header>
@@ -131,20 +131,32 @@
                     </div>
                     <p class="order_price">starting at $9.99</p>
                 </div>
-                <div class="subscription_item">
-                    <p class="subscription_name"><b>Potato</b> Lite</p>
+                <div class="subscription_item" style="border-right: 1px solid #686666">
+                    <p class="subscription_name"><b>Potato</b> Pro</p>
                     <ul>
-                        <li>Small and Compact</li>
-                        <li>Highly portable</li>
-                        <li>Unapologetically delicous</li>
+                        <li>For hungry people</li>
+                        <li>Perfect as a snack or for kids</li>
+                        <li>most popular product</li>
                     </ul>
                     <div>
                         <a class="order">ORDER</a>
                     </div>
-                    <p class="order_price">starting at $9.99</p>
+                    <p class="order_price">starting at $19.99</p>
+                </div>
+                <div class="subscription_item">
+                    <p class="subscription_name"><b>Potato</b> Premium</p>
+                    <ul>
+                        <li>Ideal for groups</li>
+                        <li>Very healthy</li>
+                        <li>Impress girls</li>
+                    </ul>
+                    <div>
+                        <a class="order">ORDER</a>
+                    </div>
+                    <p class="order_price">starting at $49.99</p>
                 </div>
                 <div style="clear:both"></div>
-            </div>            
+            </div>
         </div>
     </div>
 <style>
@@ -194,41 +206,6 @@
         padding-bottom:40px;
     }
 </style>
-
-
-
-
-    <div id="Subscriptions">
-        <h2>Subscriptions</h2>
-        <div>
-            <h3>Potato Lite</h3>
-            <ul>
-                <li>Small and compact</li>
-                <li>Perfect for in between or for kids</li>
-            </ul>
-            <div>9.90$ per month</div>
-            <button>ORDER</button>
-        </div>
-        <div>
-            <h3>Potato Pro</h3>
-            <ul>
-                <li>For hungry people</li>
-                <li>For lunch and dinner for two</li>
-            </ul>
-            <div>19.90$ per month</div>
-            <button>ORDER</button>
-        </div>
-        <div>
-            <h3>Potato Premium</h3>
-            <ul>
-                <li>Ideal for groups</li>
-                <li>Very healthy</li>
-                <li>Impress girls</li>
-            </ul>
-            <div>49.90$ per month</div>
-            <button>ORDER</button>
-        </div>
-    </div>
 
     <div id="">
         <div>
@@ -344,22 +321,46 @@
         </div>
     </div>
 
-    <div>
+    <div id="reviews">
         <h2>Reviews</h2>
-        <button onclick="previousReview"></button>
-        <div class="review">
-            <div class="reviewerName">Romäään</div>
-            <div class="quote">The real name for a potato is Gummel! You should eat Gümmel with a Steak.</div>
-        </div>
-        <div class="review">
-            <div class="reviewerName">Jonas Portman</div>
-            <div class="quote">folien kartoffen sind die besten </div>
-        </div>
-        <div class="review">
-            <div class="reviewerName">Marco Despeaux</div>
-            <div class="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
-        </div>
+        <div>What our customers say:</div>
+        <div id="reviewerName">Marco Despeaux</div>
+        <div id="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
+        <button onclick="showPrevReview()">Previous</button>
+        <button onclick="showNextReview()">Next</button>
     </div>
+
+    <script>
+        var reviewIndex = 0;
+        var reviews = [
+            ["Roman Schilter", "The real name for a potato is Gummel! You should eat Gümmel with a Steak." ],
+            ["Jonas Portman", "Baked potatoes are the best!" ],
+            ["Marco Despeaux", "Potatoes are like unicorns. Awesome and farting rainbows." ],
+        ];
+        function showPrevReview()
+        {
+            reviewIndex--;
+            if (reviewIndex == -1)
+            {
+                reviewIndex = reviews.length - 1;
+            }
+            updateReview();
+        }
+        function showNextReview()
+        {
+            reviewIndex++;
+            if (reviewIndex == reviews.length)
+            {
+                reviewIndex = 0;
+            }
+            updateReview();
+        }
+        function updateReview()
+        {
+            $("#reviewerName").text(reviews[reviewIndex][0]);
+            $("#quote").text(reviews[reviewIndex][1]);
+        }
+    </script>
 
     <footer>
         <div>Copyright © 2018 Potato Group</div>
