@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Potato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
@@ -97,15 +96,15 @@
                 <h2>Potato</h2>
             </div>
             <div id="navigation_links">
-                <a href="#about">About</a>    
+                <a href="about.html">About</a>    
                 <a href="#features">Features</a>         
                 <a href="#nuritrition">Nutrition</a>  
                 <a id="buy" href="#buy">Buy it now</a>  
-            </div>            
+            </div>
         </div>
         <div id="landing_content">
             <h1>"Sweet, Nuritritious and Delicious"</h1>
-            <p>By Yannis and <b>Luca</b></p>
+            <p>By <b>Yannis</b> and <b>Luca</b></p>
             <picture >
                 <!-- ToDo: add more pictures -->
                 <img src="content/pictures/landing-potato.png" alt="Potatoes" style="width:auto;">
@@ -124,7 +123,7 @@
                         <li>Unapologetically delicous</li>
                     </ul>
                     <div>
-                        <a class="order">ORDER</a>
+                        <a class="button order">ORDER</a>
                     </div>
                     <p class="order_price">starting at $9.99</p>
                 </div>
@@ -136,7 +135,7 @@
                         <li>most popular product</li>
                     </ul>
                     <div>
-                        <a class="order">ORDER</a>
+                        <a class="button order">ORDER</a>
                     </div>
                     <p class="order_price">starting at $19.99</p>
                 </div>
@@ -148,7 +147,7 @@
                         <li>Impress your crush</li>
                     </ul>
                     <div>
-                        <a class="order">ORDER</a>
+                        <a class="button order">ORDER</a>
                     </div>
                     <p class="order_price">starting at $49.99</p>
                 </div>
@@ -160,10 +159,10 @@
         <div id="landing_content">
             <h1>Let's eat some Chips</h1>
             <div id="chipsEater">
-                <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
+                <img class="button chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
                 <audio style="display:none" id="crisp" src="content/music/Crisps.mp3"></audio>
             </div>
-            <div>Click to eat!</div><a onclick="refillChips()">REFILL</a>
+            <div>Click to eat!</div><b><a class="button" onclick="refillChips()">REFILL</a></b>
         </div>
     </div>
 
@@ -575,8 +574,8 @@
         <h1 class="subscriptions_title">What our customers say:</h1>
         <div id="reviewerName" class="subscription_name">Marco Despeaux</div>
         <div id="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
-        <button onclick="showPrevReview()" class="order">Previous</button>
-        <button onclick="showNextReview()" class="order">Next</button>
+        <button onclick="showNextReview()" class="button order">Next</button>
+        <button onclick="showPrevReview()" class="button order">Previous</button>
     </div>
 
     <script>
