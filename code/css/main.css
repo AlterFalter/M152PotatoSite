@@ -1,3 +1,15 @@
 .chips {
     max-width: 500px;
 }
+
+footer {
+    clear:both;
+    text-align: center;
+    background:radial-gradient(ellipse at center, #D1C7B1 0%, #BCAD8D 40%, #C1AF7D 100%);
+    color: white;
+    height: 100px;
+}
+.center {
+    margin-top: 30px;
+    display: inline-block;
+}
