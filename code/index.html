@@ -78,7 +78,7 @@
             color: #C1AF7D;
             background-color: white;
         }
-        #subscriptions{
+        .alternativeChapter{
             background-color: #D9E0DD;
             background:radial-gradient(ellipse at bottom, #E3EEEA 0%, #D9E0DD 100%);
             text-align: center;
@@ -115,9 +115,9 @@
             </picture>
         </div>
     </div>
-    <div class="element" id="subscriptions">
+    <div class="element alternativeChapter" id="subscriptions">
         <div id="subscriptions_content">
-            <h1 id="subscriptions_title">Order one (or more) today!</h1>
+            <h1 id="subscriptions_title">Subscribe today!</h1>
             <div id="subscription_items">
                 <div class="subscription_item" style="border-right: 1px solid #686666">
                     <p class="subscription_name"><b>Potato</b> Lite</p>
@@ -148,7 +148,7 @@
                     <ul>
                         <li>Ideal for groups</li>
                         <li>Very healthy</li>
-                        <li>Impress girls</li>
+                        <li>Impress your crush</li>
                     </ul>
                     <div>
                         <a class="order">ORDER</a>
@@ -166,6 +166,7 @@
                 <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
                 <audio style="display:hidden" id="crisp" src="content/music/Crisps.mp3"></audio>
             </div>
+            <div>Click to eat!</div>
         </div>
     </div>
 
@@ -355,13 +356,12 @@
         </div>
     </div>
 
-    <div id="reviews">
-        <h2>Reviews</h2>
-        <div>What our customers say:</div>
-        <div id="reviewerName">Marco Despeaux</div>
+    <div id="reviews" class="element alternativeChapter">
+        <h1 class="subscriptions_title">What our customers say:</h1>
+        <div id="reviewerName" class="subscription_name">Marco Despeaux</div>
         <div id="quote">Potatoes are like unicorns. Awesome and farting rainbows.</div>
-        <button onclick="showPrevReview()">Previous</button>
-        <button onclick="showNextReview()">Next</button>
+        <button onclick="showPrevReview()" class="order">Previous</button>
+        <button onclick="showNextReview()" class="order">Next</button>
     </div>
 
     <script>
