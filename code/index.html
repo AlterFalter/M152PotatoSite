@@ -166,7 +166,7 @@
                 <img class="chips" id="chips" src="content/pictures/chips/Chips9.JPG" alt="picture">
                 <audio style="display:hidden" id="crisp" src="content/music/Crisps.mp3"></audio>
             </div>
-            <div>Click to eat!</div>
+            <div>Click to eat!</div><a onclick="refillChips()">REFILL</a>
         </div>
     </div>
 
@@ -176,9 +176,14 @@
             let stage = source.match(/\d/)[0] - 1;
             if(stage >= 0){
                 $("#chips").attr('src', source.replace(/\d/, stage));
+                $('#crisp')[0].currentTime = 0.05;
                 $('#crisp')[0].play();
             }
         });
+        function refillChips(){
+            let source = $("#chips").attr('src');
+            $("#chips").attr('src', source.replace(/\d/, 9));
+        }
     </script>
 <style>
     #subscriptions_content{
