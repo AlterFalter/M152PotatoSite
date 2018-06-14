@@ -22,3 +22,7 @@ footer {
 .button {
     cursor: pointer;
 }
+
+.products {
+    width: 100%;
+}

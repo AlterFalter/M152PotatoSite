@@ -165,22 +165,6 @@
             <div>Click to eat!</div><b><a class="button" onclick="refillChips()">REFILL</a></b>
         </div>
     </div>
-
-    <script>
-        $("#chips").on('click', () => {
-            let source = $("#chips").attr('src');
-            let stage = source.match(/\d/)[0] - 1;
-            if(stage >= 0){
-                $("#chips").attr('src', source.replace(/\d/, stage));
-                $('#crisp')[0].currentTime = 0.05;
-                $('#crisp')[0].play();
-            }
-        });
-        function refillChips(){
-            let source = $("#chips").attr('src');
-            $("#chips").attr('src', source.replace(/\d/, 9));
-        }
-    </script>
 <style>
     #subscriptions_content{
         text-align: left;
@@ -364,111 +348,75 @@
     <h2 style="text-align:center">Lightbox</h2>
     
     <div class="row">
-      <div class="column">
-        <img alt="Chips" src="content/pictures/products/chips.jpeg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-      </div>
-      <div class="column">
-        <img alt="Fries" src="content/pictures/products/fries.jpeg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-      </div>
-      <div class="column">
-        <img alt="Baked Potato" src="content/pictures/products/baked_potato.jpeg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-      </div>
-      <div class="column">
-        <img alt="Potato Gratin" src="content/pictures/products/potato_gratin.jpeg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
-      </div>
+        <div class="column">
+            <img alt="Chips" src="content/pictures/products/chips.jpeg" onclick="openModal(1)" class="hover-shadow cursor products">
+        </div>
+        <div class="column">
+            <img alt="Fries" src="content/pictures/products/fries.jpeg" onclick="openModal(2)" class="hover-shadow cursor products">
+        </div>
+        <div class="column">
+            <img alt="Baked Potato" src="content/pictures/products/baked_potato.jpeg" onclick="openModal(3)" class="hover-shadow cursor products">
+        </div>
+        <div class="column">
+            <img alt="Potato Gratin" src="content/pictures/products/potato_gratin.jpeg" onclick="openModal(4)" class="hover-shadow cursor products">
+        </div>
+        <div class="column">
+            <img alt="Cooking Potatoes" src="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
+        </div>
+        <div class="column">
+            <img alt="Cooking Potatoes" src="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
+        </div>
     </div>
     
     <div id="myModal" class="modal">
-      <span class="close cursor" onclick="closeModal()">&times;</span>
-      <div class="modal-content">
-    
-        <div class="mySlides">
-          <div class="numbertext" style="right:0">1 / 4</div>
-          <img alt="Chips" src="content/pictures/products/chips.jpeg" style="width:50%">
-          <p style="width:50%; float:left">Chips</p>
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">2 / 4</div>
-            <img alt="Fries" src="content/pictures/products/fries.jpeg" style="width:50%">
-            <p style="width:50%; float: right;">Fries</p>
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext" style="right:0">3 / 4</div>
-            <img alt="Baked Potato" src="content/pictures/products/baked_potato.jpeg" style="width:50%">
-            <p style="width:50%; float: left;">Baked Potato</p>
-        </div>
-
-        <div class="mySlides">
-            <div class="numbertext">4 / 4</div>
-            <img alt="Potato Gratin" src="content/pictures/products/potato_gratin.jpeg" style="width:50%">
-            <p style="width:50%; float: right;">Gratin</p>
-        </div>
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
         
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    
-        <div class="caption-container">
-          <p id="caption"></p>
-        </div>
-    
-    
-        <div class="column">
-          <img alt="Chips" class="demo cursor" src="content/pictures/products/chips.jpeg" style="width:100%" onclick="currentSlide(1)">
-        </div>
-        <div class="column">
-          <img alt="Fries" class="demo cursor" src="content/pictures/products/fries.jpeg" style="width:100%" onclick="currentSlide(2)">
-        </div>
-        <div class="column">
-          <img alt="Baked Potato" class="demo cursor" src="content/pictures/products/baked_potato.jpeg" style="width:100%" onclick="currentSlide(3)">
-        </div>
-        <div class="column">
-          <img alt="Potato Gratin" class="demo cursor" src="content/pictures/products/potato_gratin.jpeg" style="width:100%" onclick="currentSlide(4)">
-        </div>
-      </div>
-    </div>
-    
-    <script>
-    function openModal() {
-      document.getElementById('myModal').style.display = "block";
-    }
-    
-    function closeModal() {
-      document.getElementById('myModal').style.display = "none";
-    }
-    
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      var captionText = document.getElementById("caption");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      captionText.innerHTML = dots[slideIndex-1].alt;
-    }
-    </script>
-    
+            <div class="mySlides">
+                <div class="numbertext" style="right:0">1 / 4</div>
+                <img alt="Chips" src="content/pictures/products/chips.jpeg" style="width:50%">
+                <p style="width:50%; float:left">Chips</p>
+            </div>
 
+            <div class="mySlides">
+                <div class="numbertext">2 / 4</div>
+                <img alt="Fries" src="content/pictures/products/fries.jpeg" style="width:50%">
+                <p style="width:50%; float: right;">Fries</p>
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext" style="right:0">3 / 4</div>
+                <img alt="Baked Potato" src="content/pictures/products/baked_potato.jpeg" style="width:50%">
+                <p style="width:50%; float: left;">Baked Potato</p>
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 4</div>
+                <img alt="Potato Gratin" src="content/pictures/products/potato_gratin.jpeg" style="width:50%">
+                <p style="width:50%; float: right;">Gratin</p>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+        
+            <div class="column">
+                <img alt="Chips" class="demo cursor" src="content/pictures/products/chips.jpeg" style="width:100%" onclick="currentSlide(1)">
+            </div>
+            <div class="column">
+                <img alt="Fries" class="demo cursor" src="content/pictures/products/fries.jpeg" style="width:100%" onclick="currentSlide(2)">
+            </div>
+            <div class="column">
+                <img alt="Baked Potato" class="demo cursor" src="content/pictures/products/baked_potato.jpeg" style="width:100%" onclick="currentSlide(3)">
+            </div>
+            <div class="column">
+                <img alt="Potato Gratin" class="demo cursor" src="content/pictures/products/potato_gratin.jpeg" style="width:100%" onclick="currentSlide(4)">
+            </div>
+        </div>
+    </div>
 
     <div>
         <div id="infoMenu">
@@ -492,28 +440,6 @@
             potatoes dry.
         </div>
     </div>
-
-    <script>
-        function hideInfoTexts()
-        {
-            $(".infoText").hide();
-        }
-        function showProduction()
-        {
-            hideInfoTexts();
-            $("#Production").show();
-        }
-        function showConvertion()
-        {
-            hideInfoTexts();
-            $("#Convertion").show();
-        }
-        function showDelivery()
-        {
-            hideInfoTexts();
-            $("#Delivery").show();
-        }
-    </script>
 
     <div>
         <h2>Recipes</h2>
@@ -548,21 +474,6 @@
                 <div>Music from <a href="https://www.bensound.com">Bensound</a></div>
             </div>
         </div>
-        <script>
-        $(".video_overlay").on('click', (e) => {
-            let overlay = $(e.target).closest('.video_overlay');
-            let video = overlay.find('video').get(0);
-            if(video.paused){
-                video.play();
-                overlay.find('.video_button').hide();
-            }
-            else{
-                video.pause();
-                overlay.find('.video_button').show();
-            }
-        });
-        </script>
-        
     </div>
 
 
@@ -573,38 +484,6 @@
         <button onclick="showNextReview()" class="button order">Next</button>
         <button onclick="showPrevReview()" class="button order">Previous</button>
     </div>
-
-    <script>
-        var reviewIndex = 0;
-        var reviews = [
-            ["Roman Schilter", "The real name for a potato is Gummel! You should eat Gümmel with a Steak." ],
-            ["Jonas Portman", "Baked potatoes are the best!" ],
-            ["Marco Despeaux", "Potatoes are like unicorns. Awesome and farting rainbows." ],
-        ];
-        function showPrevReview()
-        {
-            reviewIndex--;
-            if (reviewIndex == -1)
-            {
-                reviewIndex = reviews.length - 1;
-            }
-            updateReview();
-        }
-        function showNextReview()
-        {
-            reviewIndex++;
-            if (reviewIndex == reviews.length)
-            {
-                reviewIndex = 0;
-            }
-            updateReview();
-        }
-        function updateReview()
-        {
-            $("#reviewerName").text(reviews[reviewIndex][0]);
-            $("#quote").text(reviews[reviewIndex][1]);
-        }
-    </script>
 
     <footer>
         <div class="center">Copyright © 2018 Potato Group<br/>All rights reserved</div>
