@@ -10,19 +10,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
     <script src="js/main.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
-        body{
-            
-            margin:0px;
-            font-family: 'Open Sans', sans-serif;
-        }
-        a{
-            cursor: pointer;
-        }
         .element{
             min-height: 300px;
-            width:100%;
-            clear:both;
         }
         #landing_content{
             text-align: center;
@@ -32,11 +21,6 @@
         #landing_content picture img{
             width: 350px !important;
             margin-top: 50px;
-        }
-        #landing{
-            background:radial-gradient(ellipse at center, #D1C7B1 0%, #BCAD8D 40%, #C1AF7D 100%);
-            color: white;
-            height:700px;
         }
         #navigation_logo{
             float: left;
@@ -82,13 +66,6 @@
             color: #C1AF7D;
             background-color: white;
         }
-        .alternativeChapter{
-            background-color: #D9E0DD;
-            background:radial-gradient(ellipse at bottom, #E3EEEA 0%, #D9E0DD 100%);
-            text-align: center;
-            float: left;
-            color: #686666;
-        }
         @media screen and (max-width: 650px) {
             #navigation_links a{
                 float: none;
@@ -101,7 +78,6 @@
                 margin-top: 50px;
             }
             #landing{
-                background:radial-gradient(ellipse at bottom, #D1C7B1 0%, #BCAD8D 40%, #C1AF7D 100%);
                 height: 800px;
             }
             #buy{
@@ -111,7 +87,7 @@
     </style>
 </head>
 <body>    
-    <div class="element" id="landing">
+    <div class="background" id="landing">
         <div id="navigation">
             <div id="navigation_logo">
                 <img src="" asrc="content/pictures/clipart-potato.png" alt="clipart-potato">
@@ -133,70 +109,71 @@
             </picture>
         </div>
     </div>
-    <div class="element alternativeChapter" id="subscriptions">
-        <div id="subscriptions_content">
-            <h1 id="subscriptions_title">Subscribe today!</h1>
-            <div id="subscription_items">
-                <div class="subscription_item" style="border-right: 1px solid #686666">
-                    <p class="subscription_name"><b>Potato</b> Lite</p>
-                    <ul style="text-align:left">
-                        <li>Small and Compact</li>
-                        <li>Highly portable</li>
-                        <li>Unapologetically delicous</li>
-                    </ul>
-                    <div>
-                        <a class="button order">ORDER</a>
-                    </div>
-                    <p class="order_price">starting at $9.99</p>
+    <div class="background" id="subscriptions">
+        <h1 id="subscriptions_title">Subscribe today!</h1>
+        <div id="subscription_items">
+            <div class="subscription_item" style="border-right: 1px solid #686666">
+                <p class="subscription_name"><b>Potato</b> Lite</p>
+                <ul style="text-align:left">
+                    <li>Small and Compact</li>
+                    <li>Highly portable</li>
+                    <li>Unapologetically delicous</li>
+                </ul>
+                <div>
+                    <a class="cursor order">ORDER</a>
                 </div>
-                <div class="subscription_item" style="border-right: 1px solid #686666">
-                    <p class="subscription_name"><b>Potato</b> Pro</p>
-                    <ul>
-                        <li>For hungry people</li>
-                        <li>Perfect as a snack</li>
-                        <li>most popular product</li>
-                    </ul>
-                    <div>
-                        <a class="button order">ORDER</a>
-                    </div>
-                    <p class="order_price">starting at $19.99</p>
-                </div>
-                <div class="subscription_item">
-                    <p class="subscription_name"><b>Potato</b> Premium</p>
-                    <ul>
-                        <li>Ideal for groups</li>
-                        <li>Very healthy</li>
-                        <li>Impress your crush</li>
-                    </ul>
-                    <div>
-                        <a class="button order">ORDER</a>
-                    </div>
-                    <p class="order_price">starting at $49.99</p>
-                </div>
-                <div style="clear:both"></div>
+                <p class="order_price">starting at $9.99</p>
             </div>
+            <div class="subscription_item" style="border-right: 1px solid #686666">
+                <p class="subscription_name"><b>Potato</b> Pro</p>
+                <ul>
+                    <li>For hungry people</li>
+                    <li>Perfect as a snack</li>
+                    <li>most popular product</li>
+                </ul>
+                <div>
+                    <a class="cursor order">ORDER</a>
+                </div>
+                <p class="order_price">starting at $19.99</p>
+            </div>
+            <div class="subscription_item">
+                <p class="subscription_name"><b>Potato</b> Premium</p>
+                <ul>
+                    <li>Ideal for groups</li>
+                    <li>Very healthy</li>
+                    <li>Impress your crush</li>
+                </ul>
+                <div>
+                    <a class="cursor order">ORDER</a>
+                </div>
+                <p class="order_price">starting at $49.99</p>
+            </div>
+            <div style="clear:both"></div>
         </div>
     </div>
-    <div class="element" id="landing">
+    <div class="background" id="landing">
         <div id="landing_content">
             <h1>Let's eat some Chips</h1>
             <div id="chipsEater">
+<<<<<<< HEAD
                 <button class="noButtonLooks" onclick="eatChips()">
                     <img class="button chips" id="chips" src="" asrc="content/pictures/chips/Chips9.JPG" alt="picture">
+=======
+                <button class="noButtonLooks cursor" onclick="eatChips()">
+                    <img class="chips" id="chips" asrc="content/pictures/chips/Chips9.JPG" alt="picture">
+>>>>>>> fbd469c894b1357a0e18ee0216ec18de924871b2
                 </button>
                 <audio style="display:none" id="crisp" src="content/music/Crisps.mp3"></audio>
             </div>
-            <div>Click to eat!</div><b><a class="button" onclick="refillChips()">REFILL</a></b>
+            <div>Click to eat!</div>
+            <b><a class="cursor" onclick="refillChips()">REFILL</a></b>
         </div>
     </div>
 <style>
-    #subscriptions_content{
-        text-align: left;
-        min-height: 600px;
-    }
     .subscription_item{
         width:250px;
         display: inline-block;
+        margin-bottom: 75px;
     }
     #subscription_items{
         margin: 0 auto;
@@ -205,12 +182,6 @@
     .subscription_item li{
         margin-top: 5px;
         text-align: left;
-    }
-    #subscriptions_title{
-        text-align: center;
-        margin:auto;
-        margin-top: 75px;
-        margin-bottom: 75px;
     }
     .order{
         text-decoration: none;
@@ -249,7 +220,6 @@
             min-width: 275px;
             margin: auto;
             float:none;
-            margin-bottom: 75px;
         }
         .subscription_name {
             padding: 0;
@@ -259,9 +229,6 @@
             width: 190px!important;
         }
     }
-</style>
-
-<style>
     
     .row:after {
       content: "";
@@ -389,6 +356,7 @@
     .hover-shadow:hover {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+<<<<<<< HEAD
     </style>    
     <h2 style="text-align:center">Menus</h2>
     
@@ -404,6 +372,31 @@
         </div>
         <div class="column">
             <img alt="Potato Gratin" src="" asrc="content/pictures/products/potato_gratin.jpeg" onclick="openModal(4)" class="hover-shadow cursor products">
+=======
+    </style>
+    <div class="background">
+        <h1>Menus</h1>
+        
+        <div class="row">
+            <div class="column">
+                <img alt="Chips" src="content/pictures/products/chips.jpeg" onclick="openModal(1)" class="hover-shadow cursor products">
+            </div>
+            <div class="column">
+                <img alt="Fries" src="content/pictures/products/fries.jpeg" onclick="openModal(2)" class="hover-shadow cursor products">
+            </div>
+            <div class="column">
+                <img alt="Baked Potato" src="content/pictures/products/baked_potato.jpeg" onclick="openModal(3)" class="hover-shadow cursor products">
+            </div>
+            <div class="column">
+                <img alt="Potato Gratin" src="content/pictures/products/potato_gratin.jpeg" onclick="openModal(4)" class="hover-shadow cursor products">
+            </div>
+            <div class="column">
+                <img alt="Cooking Potatoes" src="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
+            </div>
+            <div class="column">
+                <img alt="Cooking Potatoes" src="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
+            </div>
+>>>>>>> fbd469c894b1357a0e18ee0216ec18de924871b2
         </div>
     </div>
     
@@ -457,7 +450,7 @@
         </div>
     </div>
 
-    <div id="landing">
+    <div id="background">
         <style>
             #infoMenu{
                 width: 100%;
@@ -558,15 +551,15 @@
     </div>
 
 
-    <div id="reviews" class="element alternativeChapter">
+    <div id="reviews" class="background">
         <h1 class="subscriptions_title">What our customers say:</h1>
         <div id="reviewerName" class="subscription_name"></div>
         <div id="quote"></div>
-        <button onclick="showNextReview()" class="button order">Next</button>
-        <button onclick="showPrevReview()" class="button order">Previous</button>
+        <button onclick="showNextReview()" class="cursor order">Next</button>
+        <button onclick="showPrevReview()" class="cursor order">Previous</button>
     </div>
 
-    <footer>
+    <footer class="background">
         <div class="center">Copyright © 2018 Potato Group<br/>All rights reserved</div>
     </footer>
     <script>
