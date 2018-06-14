@@ -168,7 +168,7 @@
 <style>
     #subscriptions_content{
         text-align: left;
-        height: 600px;
+        min-height: 600px;
     }
     .subscription_item{
         width:250px;
@@ -184,7 +184,9 @@
     }
     #subscriptions_title{
         text-align: center;
-        margin: 75px;
+        margin:auto;
+        margin-top: 75px;
+        margin-bottom: 75px;
     }
     .order{
         text-decoration: none;
@@ -213,6 +215,25 @@
     }
     .video_overlay{
         display: inline-block;
+    }
+
+    @media screen and (max-width: 775px) {
+        .subscription_item{
+            border: none!important;
+            display: block;
+            width: 50%;
+            min-width: 275px;
+            margin: auto;
+            float:none;
+            margin-bottom: 75px;
+        }
+        .subscription_name {
+            padding: 0;
+        }
+        .subscription_item ul {
+            margin: auto;
+            width: 190px!important;
+        }
     }
 </style>
 
