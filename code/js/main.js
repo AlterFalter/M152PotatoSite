@@ -20,7 +20,8 @@ function showDelivery()
 }
 
 // chips
-$("#chips").on('click', () => {
+function eatChips()
+{
     let source = $("#chips").attr('src');
     let stage = source.match(/\d/)[0] - 1;
     if(stage >= 0){
@@ -28,7 +29,7 @@ $("#chips").on('click', () => {
         $('#crisp')[0].currentTime = 0.05;
         $('#crisp')[0].play();
     }
-});
+}
 
 function refillChips(){
     let source = $("#chips").attr('src');
