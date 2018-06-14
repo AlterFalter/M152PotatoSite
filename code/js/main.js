@@ -1,3 +1,7 @@
+window.onload = function() {
+    initReview();
+}
+
 // infotexts
 function hideInfoTexts()
 {
@@ -90,12 +94,18 @@ $(".video_overlay").on('click', (e) => {
 });
 
 // reviews
-var reviewIndex = 0;
-var reviews = [
-    ["Roman Schilter", "The real name for a potato is Gummel! You should eat Gümmel with a Steak." ],
-    ["Jonas Portman", "Baked potatoes are the best!" ],
-    ["Marco Despeaux", "Potatoes are like unicorns. Awesome and farting rainbows." ],
-];
+var reviewIndex;
+var reviews;
+function initReview()
+{
+    reviewIndex = 0;
+    reviews = [
+        ["Roman Schilter", "The real name for a potato is Gummel! You should eat Gümmel with a Steak." ],
+        ["Jonas Portman", "Baked potatoes are the best!" ],
+        ["Marco Despeaux", "Potatoes are like unicorns. Awesome and farting rainbows." ],
+    ];
+    updateReview();
+}
 function showPrevReview()
 {
     reviewIndex--;
