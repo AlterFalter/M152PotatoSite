@@ -42,7 +42,7 @@ h1 {
     width:calc(50% - 2px);
 }
 
-.cursor {
+.cursor, a {
     cursor: pointer;
 }
 
