@@ -16,6 +16,9 @@
             margin:0px;
             font-family: 'Open Sans', sans-serif;
         }
+        a{
+            cursor: pointer;
+        }
         .element{
             min-height: 300px;
             width:100%;
@@ -460,27 +463,69 @@
         </div>
     </div>
 
-    <div>
-        <div id="infoMenu">
-            <button onclick="showProduction();">Production</button>
-            <button onclick="showConvertion();">Convertion</button>
-            <button onclick="showDelivery();">Delivery</button>
-        </div>
-        <div id="Production" class="infoText">
-            Potatoes are grown in over 100 countries. The total world potato production is estimated at over 381 million tonnes in 2014.
-            Europe, North America and Russia are the biggest potato consumers, but the biggest production is in China and India.
-            Potatoes are the world's fourth-largest food crop, following corn, wheat, and rice.
-        </div>
-        <div id="Convertion" class="infoText">
-            To convert the worlds best <a href="https://www.quora.com/Are-potatoes-vegetables-or-fruits">vegetable</a> into other delicious 
-            products, many big high tech machines are used. The potato convertion process will also be optimated with AI. Stay tuned for
-            future updates.
-        </div>
-        <div id="Delivery" class="infoText">
-            Potatoes can be stored over one to two weeks at room temperature. They can be delivered in paper bags as full potatoes or in
-            plastic bags as chips, and so on. For industrial transportation they take often big trucks that are fully closed to keep the 
-            potatoes dry.
-        </div>
+    <div id="landing">
+        <style>
+            #infoMenu{
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                float: left;
+            }
+            .infoText{
+                text-align: center;
+                clear:both;
+                height: 100%;    
+                display: table-cell;
+                vertical-align: middle;
+            }
+            .infoButtonBorder{
+                border-right: 1px solid white;
+            }
+            .infoText span{
+                display: inline-block;
+                padding: 50px;
+            }
+            .infoButton{
+                width: 33%;
+                padding: 20px 0 20px 0;
+                float: left;
+                text-align: center;
+                border-bottom: 1px solid white;
+            }
+            @media screen and (max-width: 350px) {
+                .infoText span{
+                    padding: 0;
+                }
+                .infoButton{
+                    width: 100%;
+                }
+                .infoButtonBorder{
+                    border-right: none;
+                }
+            }
+        </style>
+        <ul id="infoMenu">
+            <a class="infoButton infoButtonBorder" onclick="showProduction();">Production</a>
+            <a class="infoButton infoButtonBorder" onclick="showConvertion();">Convertion</a>
+            <a class="infoButton" onclick="showDelivery();">Delivery</a>
+        </ul>
+        <div  style="display: table; height: 100%;">
+            <span id="Production" class="infoText">
+                <span>"Potatoes are grown in over 100 countries. The total world potato production is estimated at over 381 million tonnes in 2014.
+                Europe, North America and Russia are the biggest potato consumers, but the biggest production is in China and India.
+                Potatoes are the world's fourth-largest food crop, following corn, wheat, and rice."</span>
+            </span>
+            <span id="Convertion" class="infoText" style="display: none">
+                "To convert the worlds best <a href="https://www.quora.com/Are-potatoes-vegetables-or-fruits">vegetable</a> into other delicious 
+                products, many big high tech machines are used. The potato convertion process will also be optimated with AI. Stay tuned for
+                future updates."
+            </span>
+            <span id="Delivery" class="infoText" style="display: none">
+                "Potatoes can be stored over one to two weeks at room temperature. They can be delivered in paper bags as full potatoes or in
+                plastic bags as chips, and so on. For industrial transportation they take often big trucks that are fully closed to keep the 
+                potatoes dry."
+            </span>
+        </div>        
     </div>
 
     <div>
