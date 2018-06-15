@@ -287,6 +287,7 @@
       border-radius: 0 3px 3px 0;
       user-select: none;
       -webkit-user-select: none;
+      margin-left: 5px;
     }
     
     /* Position the "next button" to the right */
@@ -495,11 +496,11 @@
         <h1 class="subscriptions_title">What our customers say:</h1>
         <div id="reviewerName" class="subscription_name"></div>
         <div id="quote"></div>
-        <button onclick="showNextReview()" class="cursor order">Next</button>
-        <button onclick="showPrevReview()" class="cursor order">Previous</button>
+        <button onclick="showNextReview()" class="cursor order reviewButton">Next</button>
+        <button onclick="showPrevReview()" class="cursor order reviewButton">Previous</button>
     </div>
 
-    <footer class="background" style="min-height: 50px; padding: 10px;">
+    <footer class="background">
         <div class="center">Copyright © 2018 Potato Group<br/></div>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
             <img alt="Creative Commons Lizenzvertrag" style="border-width:0" src="" asrc="https://i.creativecommons.org/l/by/4.0/88x31.png" />
