@@ -405,6 +405,8 @@
         #infoMenu{
             padding: 0;
             margin: 0;
+            width:100%;
+            clear:both;
         }
         .infoText{
             text-align: center;
@@ -417,10 +419,17 @@
             padding: 50px;
         }
         .infoButton{
-            width: 33%;
+            width:calc(33.3333333333333% - 1px);
             padding: 20px 0 20px 0;
             float: left;
             text-align: center;
+        }
+        .infoButton:last-child {
+            width:33.3333333333333%;
+        }
+        .infoButton:focus, .infoButton:hover {
+            background: white;
+            color: #C1AF7D;
         }
         @media screen and (max-width: 350px) {
             .infoText span{
