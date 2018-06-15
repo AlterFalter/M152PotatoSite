@@ -20,24 +20,24 @@ function showConvertion()
 function showDelivery()
 {
     hideInfoTexts();
-    $("#Delivery").show();
+    $("#kö").show();
 }
 
 // chips
 function eatChips()
 {
-    let source = $("#chips").attr('src');
+    let source = $("#chips_eat").attr('src');
     let stage = source.match(/\d/)[0] - 1;
     if(stage >= 0){
-        $("#chips").attr('src', source.replace(/\d/, stage));
-        $('#crisp')[0].currentTime = 0.05;
-        $('#crisp')[0].play();
+        $("#chips_eat").attr('src', source.replace(/\d/, stage));
+        $('#chips_eat')[0].currentTime = 0.05;
+        $('#chips_eat')[0].play();
     }
 }
 
 function refillChips(){
-    let source = $("#chips").attr('src');
-    $("#chips").attr('src', source.replace(/\d/, 9));
+    let source = $("#chips_eat").attr('src');
+    $("#chips_eat").attr('src', source.replace(/\d/, 9));
 }
 
 // lightbox

@@ -6,8 +6,8 @@
     <title>Potato</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+    <link href="" ahref="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <script src="js/main.js"></script>
     <style>
         #navigation_logo{
@@ -139,9 +139,9 @@
         <h1>Let's eat some Chips</h1>
         <div id="chipsEater">
             <button class="noButtonLooks cursor" onclick="eatChips()">
-                <img class="chips" id="chips" src="" asrc="content/pictures/chips/Chips9.JPG" alt="picture">
+                <img style="width:100%" class="chips" id="chips_eat" src="" asrc="content/pictures/chips/Chips9.JPG" alt="picture">
             </button>
-            <audio style="display:none" id="crisp" src="content/music/Crisps.mp3"></audio>
+            <audio style="display:none" id="crisp" src="" asrc="content/music/Crisps.mp3"></audio>
         </div>
         <div>Click to eat!</div>
         <b><a class="cursor" onclick="refillChips()">REFILL</a></b>
@@ -334,80 +334,73 @@
     }
     </style>
 
-    <div class="background alternativeBackground">
+<div class="background alternativeBackground">
         <h1>Menus</h1>
-        
-        <div class="row">
-            <div class="column">
-                <img alt="Chips" src="" asrc="content/pictures/products/chips.jpeg" onclick="openModal(1)" class="hover-shadow cursor products">
-            </div>
-            <div class="column">
-                <img alt="Fries" src="" asrc="content/pictures/products/fries.jpeg" onclick="openModal(2)" class="hover-shadow cursor products">
-            </div>
-            <div class="column">
-                <img alt="Baked Potato" src="" asrc="content/pictures/products/baked_potato.jpeg" onclick="openModal(3)" class="hover-shadow cursor products">
-            </div>
-            <div class="column">
-                <img alt="Potato Gratin" src="" asrc="content/pictures/products/potato_gratin.jpeg" onclick="openModal(4)" class="hover-shadow cursor products">
-            </div>
-            <div class="column">
-                <img alt="Cooking Potatoes" src="" asrc="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
-            </div>
-            <div class="column">
-                <img alt="Cooking Potatoes" src="" asrc="content/pictures/products/" onclick="openModal(5)" class="hover-shadow cursor products">
-            </div>
-        </div>
+        <a href="#chips">
+            <img src="content/pictures/products/chips.jpeg" class="thumbnail">
+        </a>
+        <a href="#_" class="lightbox" id="chips">
+            <img src="content/pictures/products/chips.jpeg">
+        </a>
+
+        <a href="#fries">
+            <img src="content/pictures/products/fries.jpeg" class="thumbnail">
+        </a>
+        <a href="#_" class="lightbox" id="fries">
+            <img src="content/pictures/products/fries.jpeg">
+        </a>
+
+        <a href="#potato_gratin">
+            <img src="content/pictures/products/potato_gratin.jpeg" class="thumbnail">
+        </a>
+        <a href="#_" class="lightbox" id="potato_gratin">
+            <img src="content/pictures/products/potato_gratin.jpeg">
+        </a>
+        <a href="#baked_potato">
+            <img src="content/pictures/products/baked_potato.jpeg" class="thumbnail">
+        </a>
+        <a href="#_" class="lightbox" id="baked_potato">
+            <img src="content/pictures/products/baked_potato.jpeg">
+        </a>
     </div>
-    
-    <div id="myModal" class="modal">
-        <span class="close cursor" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-        
-            <div class="mySlides">
-                <div class="numbertext" style="right:0">1 / 4</div>
-                <img alt="Chips" src="" asrc="content/pictures/products/chips.jpeg" style="width:50%">
-                <p style="width:50%; float:left">Chips</p>
-            </div>
+    <style>
+        .thumbnail{
+            max-width:400px;
+            width:100%;
+            padding:5px;
+        }
+        /** LIGHTBOX MARKUP **/
 
-            <div class="mySlides">
-                <div class="numbertext">2 / 4</div>
-                <img alt="Fries" src="" asrc="content/pictures/products/fries.jpeg" style="width:50%">
-                <p style="width:50%; float: right;">Fries</p>
-            </div>
+        .lightbox {
+            /** Default lightbox to hidden */
+            display: none;
 
-            <div class="mySlides">
-                <div class="numbertext" style="right:0">3 / 4</div>
-                <img alt="Baked Potato" src="" asrc="content/pictures/products/baked_potato.jpeg" style="width:50%">
-                <p style="width:50%; float: left;">Baked Potato</p>
-            </div>
+            /** Position and style */
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.8);
+        }
 
-            <div class="mySlides">
-                <div class="numbertext">4 / 4</div>
-                <img alt="Potato Gratin" src="" asrc="content/pictures/products/potato_gratin.jpeg" style="width:50%">
-                <p style="width:50%; float: right;">Gratin</p>
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        
-            <div class="caption-container">
-                <p id="caption"></p>
-            </div>
-        
-            <div class="column">
-                <img alt="Chips" class="demo cursor" src="" asrc="content/pictures/products/chips.jpeg" style="width:100%" onclick="currentSlide(1)">
-            </div>
-            <div class="column">
-                <img alt="Fries" class="demo cursor" src="" asrc="content/pictures/products/fries.jpeg" style="width:100%" onclick="currentSlide(2)">
-            </div>
-            <div class="column">
-                <img alt="Baked Potato" class="demo cursor" src="" asrc="content/pictures/products/baked_potato.jpeg" style="width:100%" onclick="currentSlide(3)">
-            </div>
-            <div class="column">
-                <img alt="Potato Gratin" class="demo cursor" src="" asrc="content/pictures/products/potato_gratin.jpeg" style="width:100%" onclick="currentSlide(4)">
-            </div>
-        </div>
-    </div>
+        .lightbox img {
+            /** Pad the lightbox image */
+            max-width: 90%;
+            max-height: 80%;
+            margin-top: 2%;
+        }
+
+        .lightbox:target {
+            /** Remove default browser outline */
+            outline: none;
+
+            /** Unhide lightbox **/
+            display: block;
+        }
+    </style>
 
     <style>
         #infoMenu{
@@ -465,7 +458,7 @@
         </span>
     </div>
 
-    <div hidden>
+    <div>
         <h2>Recipes</h2>
         
         <div>
@@ -475,7 +468,7 @@
             </div>
             <div>
                 <div class="video_overlay" style="position: relative">
-                    <video src="content/videos/CookingPotatoes.mp4" controls></video>
+                    <video src="" asrc="content/videos/CookingPotatoes.mp4" controls></video>
                     <div class="video_button" style="position: absolute; top:40%; color:white; left: 40%;">
                         <img src="" asrc="content/pictures/playbutton.png" alt="Playbutton">
                     </div>
@@ -490,9 +483,9 @@
             </div>
             <div>
                 <div class="video_overlay" style="position: relative">
-                    <video id="salad_video" src="content/videos/PotatoSalad.mp4" controls></video>
+                    <video id="salad_video" src="" asrc="content/videos/PotatoSalad.mp4" controls></video>
                     <div class="video_button" style="position: absolute; top:40%; color:white; left: 40%;">
-                        <img src="" asrc="content/pictures/playbutton.png" alt="Playbutton">
+                        <img src="content/pictures/playbutton.png" alt="Playbutton">
                     </div>
                 </div>
                 <div>Music from <a href="https://www.bensound.com">Bensound</a></div>
@@ -512,14 +505,30 @@
         <div class="center">Copyright © 2018 Potato Group<br/>All rights reserved</div>
     </footer>
     <script>
-        !function loadImagesAsync(){
-            $('img').each((i, e) => {
-                let asrc = $(e).attr('asrc');
-                if(asrc){
-                    $(e).attr('src', asrc);
-                }
-            });
-        }();
+        function loadSrcByTag(tag){
+            var list = document.getElementsByTagName(tag)
+            for (var i = 0; i < list.length; i++) {
+                var asrc = list[i].getAttribute('asrc');
+                if(asrc)
+                    list[i].src = asrc;
+            }
+        }
+
+        function loadHrefByTag(tag){
+            var list = document.getElementsByTagName(tag)
+            for (var i = 0; i < list.length; i++) {
+                var ahref = list[i].getAttribute('ahref');
+                if(ahref)
+                    list[i].href = ahref;
+            }
+        }
+
+        window.addEventListener("load", () =>{
+            loadHrefByTag('link');
+            loadSrcByTag('img');
+            loadSrcByTag('video');
+            loadSrcByTag('audio');
+        });
     </script>
 </body>
 </html>
