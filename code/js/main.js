@@ -5,55 +5,70 @@ window.onload = function() {
 // infotexts
 function hideInfoTexts()
 {
-    $(".infoText").hide();
+    var elements = document.getElementsByClassName('infoText');
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.display = 'none';        
+    }
 }
 function showProduction()
 {
     hideInfoTexts();
-    $("#Production").show();
+    document.getElementById('Production').style.display = 'block';
 }
 function showConvertion()
 {
     hideInfoTexts();
-    $("#Convertion").show();
+    document.getElementById('Convertion').style.display = 'block';
 }
 function showDelivery()
 {
     hideInfoTexts();
-    $("#kö").show();
+    document.getElementById('Delivery').style.display = 'block';
 }
 
 // chips
 function eatChips()
 {
-    let source = $("#chips_eat").attr('src');
-    let stage = source.match(/\d/)[0] - 1;
+    let chips = document.getElementById('chips_eat');
+    let source = chips.src;
+    let stage = source.match(/(\d).JPG/)[1] - 1;
     if(stage >= 0){
-        $("#chips_eat").attr('src', source.replace(/\d/, stage));
-        $('#chips_eat')[0].currentTime = 0.05;
-        $('#chips_eat')[0].play();
+        chips.src = source.replace(/\d.JPG/, stage) + '.JPG';
+        let audio = document.getElementById('crisp');
+        audio.currentTime = 0.05;
+        audio.play();
     }
 }
 
 function refillChips(){
-    let source = $("#chips_eat").attr('src');
-    $("#chips_eat").attr('src', source.replace(/\d/, 9));
+    let chips = document.getElementById('chips_eat');
+    let source = chips.src;
+    chips.src = source.replace(/\d.JPG/, 9) + '.JPG'
 }
 
 
 // video overlay
-$(".video_overlay").on('click', (e) => {
-    let overlay = $(e.target).closest('.video_overlay');
-    let video = overlay.find('video').get(0);
+
+window.addEventListener("load", () =>{
+    let videos = document.getElementsByClassName('video_overlay');
+    for (let i = 0; i < videos.length; i++) {
+        videos[i].addEventListener('click', videoOverlayClick);    
+    }
+});
+
+
+function videoOverlayClick(e){
+    let overlay = e.target.closest('.video_overlay');
+    let video = overlay.querySelectorAll('video')[0];
     if(video.paused){
         video.play();
-        overlay.find('.video_button').hide();
+        overlay.querySelectorAll('.video_button')[0].style.display = 'none';
     }
     else{
         video.pause();
-        overlay.find('.video_button').show();
+        overlay.querySelectorAll('.video_button')[0].style.display = "block";
     }
-});
+}
 
 // reviews
 var reviewIndex;
@@ -88,6 +103,6 @@ function showNextReview()
 }
 function updateReview()
 {
-    $("#reviewerName").text(reviews[reviewIndex][0]);
-    $("#quote").text(reviews[reviewIndex][1]);
+    document.getElementById('reviewerName').innerHTML = reviews[reviewIndex][0];
+    document.getElementById('quote').innerHTML = reviews[reviewIndex][1];
 }
